@@ -8,7 +8,7 @@ import com.chyrta.onboarder.OnboarderPage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IntroActivity extends OnboarderActivity implements OnboarderActivity.OnOnboarderPageClickListener {
+public class IntroActivity extends OnboarderActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +25,5 @@ public class IntroActivity extends OnboarderActivity implements OnboarderActivit
         pages.add(onboarderPage3);
 
         setOnboardPages(pages);
-    }
-
-    @Override
-    public void onClick(int position) {
-        switch (position) {
-
-        }
     }
 }

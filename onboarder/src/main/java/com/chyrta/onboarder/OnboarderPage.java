@@ -1,17 +1,20 @@
 package com.chyrta.onboarder;
 
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.StringRes;
 
 public class OnboarderPage {
 
     public String title;
     public String description;
     public Drawable imageResource;
-    public int titleResourceId;
-    public int descriptionResourceId;
-    public int imageResourceId;
-    public int titleColor;
-    public int descriptionColor;
+    @StringRes public int titleResourceId;
+    @StringRes public int descriptionResourceId;
+    @DrawableRes public int imageResourceId;
+    @ColorRes public int titleColor;
+    @ColorRes public int descriptionColor;
 
     public OnboarderPage(String title, String description) {
         this.title = title;
@@ -45,6 +48,30 @@ public class OnboarderPage {
         this.titleResourceId = title;
         this.descriptionResourceId = description;
         this.imageResource = imageResource;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getTitleResourceId() {
+        return titleResourceId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getDescriptionResourceId() {
+        return descriptionResourceId;
+    }
+
+    public int getTitleColor() {
+        return titleColor;
+    }
+
+    public int getDescriptionColor() {
+        return descriptionColor;
     }
 
     public void setTitleColor(int color) {
