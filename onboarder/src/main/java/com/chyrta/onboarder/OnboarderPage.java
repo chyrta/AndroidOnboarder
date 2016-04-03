@@ -15,6 +15,7 @@ public class OnboarderPage {
     @DrawableRes public int imageResourceId;
     @ColorRes public int titleColor;
     @ColorRes public int descriptionColor;
+    @ColorRes public int backgroundColor;
 
     public OnboarderPage(String title, String description) {
         this.title = title;
@@ -90,4 +91,11 @@ public class OnboarderPage {
         return imageResourceId;
     }
 
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
 }

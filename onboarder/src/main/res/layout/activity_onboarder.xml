@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_onboarder"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".OnboarderActivity">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_onboarder_pager"
@@ -11,50 +13,38 @@
         android:paddingBottom="?attr/actionBarSize"/>
 
     <View
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="?attr/actionBarSize"/>
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:alpha="0.12"
+        android:background="@android:color/white"/>
 
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
-        android:padding="@dimen/activity_margin">
+        android:paddingEnd="@dimen/activity_margin"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin"
+        android:paddingStart="@dimen/activity_margin">
+
 
         <Button
             android:id="@+id/btn_skip"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_gravity="start|center"/>
+            android:layout_gravity="start|center"
+            android:text="@string/button.skip"
+            android:textColor="@color/white"/>
 
         <LinearLayout
+            android:id="@+id/ll_indicators"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/intro_indicator_0"
-                android:layout_width="@dimen/indicator_size"
-                android:layout_height="@dimen/indicator_size"
-                android:layout_marginEnd="@dimen/activity_half_margin"
-                android:layout_marginRight="@dimen/activity_half_margin" />
-
-            <ImageView
-                android:id="@+id/intro_indicator_1"
-                android:layout_width="@dimen/indicator_size"
-                android:layout_height="@dimen/indicator_size"
-                android:layout_marginEnd="@dimen/activity_half_margin"
-                android:layout_marginRight="@dimen/activity_half_margin"/>
-
-            <ImageView
-                android:id="@+id/intro_indicator_2"
-                android:layout_width="@dimen/indicator_size"
-                android:layout_height="@dimen/indicator_size"
-                android:layout_marginEnd="@dimen/activity_half_margin"
-                android:layout_marginRight="@dimen/activity_half_margin" />
 
         </LinearLayout>
 
@@ -64,6 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center"
+            android:text="@string/button.finish"
             android:textColor="@color/white"
             android:visibility="gone"/>
 

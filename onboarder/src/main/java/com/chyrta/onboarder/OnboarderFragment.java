@@ -93,17 +93,14 @@ public class OnboarderFragment extends Fragment {
         }
 
         if (onboarderTitleColor != 0) {
-            Log.v("ONBOARD_TITLE_COLOR", String.valueOf(onboarderTitleColor));
             tvOnboarderTitle.setTextColor(ContextCompat.getColor(getActivity(), onboarderTitleColor));
         }
 
         if (onboarderDescriptionColor != 0) {
-            Log.v("ONBOARD_DESC_COLOR", String.valueOf(onboarderDescriptionColor));
             tvOnboarderDescription.setTextColor(ContextCompat.getColor(getActivity(), onboarderDescriptionColor));
         }
 
         if (onboarderImageResId != 0) {
-            Log.v("ONBOARD_IMAGE", String.valueOf(onboarderImageResId));
             ivOnboarderImage.setImageDrawable(ContextCompat.getDrawable(getActivity(), onboarderImageResId));
         }
 
