@@ -82,4 +82,12 @@ public class OnboarderPage {
         this.descriptionColor = color;
     }
 
+    public void setImageResourceId(int imageResourceId) {
+        this.imageResourceId = imageResourceId;
+    }
+
+    public int getImageResourceId() {
+        return imageResourceId;
+    }
+
 }

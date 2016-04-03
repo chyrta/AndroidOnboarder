@@ -1,1 +1,1 @@
-include ':onboarder'
+include ':onboarder', ':sample'
