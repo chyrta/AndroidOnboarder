@@ -1,5 +1,7 @@
 # Android Onboarder
-A light-weight library that allows your to make a simple welcome screen,
+A light-weight library that allows your to make a simple welcome screen in Material Design.
+
+![alt tag](https://raw.githubusercontent.com/chyrta/AndroidOnboarder/master/art/androidOnboarder.gif)
 
 Onboarding experience is a light-weight presentation about your application for new users. Some companies like Google, Telegram use that design practise in their application.
 
