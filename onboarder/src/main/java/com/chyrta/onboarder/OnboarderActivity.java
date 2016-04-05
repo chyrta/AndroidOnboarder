@@ -9,17 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 
 import com.chyrta.onboarder.utils.ColorsArrayBuilder;
 import com.chyrta.onboarder.views.CircleIndicatorView;
 
 import java.util.List;
 
-public class OnboarderActivity extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
+public abstract class OnboarderActivity extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private Integer[] colors;
-    private LinearLayout llIndicators;
+    private CircleIndicatorView circleIndicatorView;
     private ViewPager vpOnboarderPager;
     private OnboarderAdapter onboarderAdapter;
     private ImageButton ibNext;
@@ -31,10 +30,8 @@ public class OnboarderActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarder);
         setStatusBackgroundColor();
-
         getSupportActionBar().hide();
-
-        llIndicators = (LinearLayout) findViewById(R.id.ll_indicators);
+        circleIndicatorView = (CircleIndicatorView) findViewById(R.id.circle_indicator_view);
         ibNext = (ImageButton) findViewById(R.id.ib_next);
         btnSkip = (Button) findViewById(R.id.btn_skip);
         btnFinish = (Button) findViewById(R.id.btn_finish);
@@ -49,14 +46,16 @@ public class OnboarderActivity extends AppCompatActivity implements View.OnClick
     public void setOnboardPagesReady(List<OnboarderPage> pages) {
         onboarderAdapter = new OnboarderAdapter(pages, getSupportFragmentManager());
         vpOnboarderPager.setAdapter(onboarderAdapter);
-        setPageIndicators(pages.size());
         colors = ColorsArrayBuilder.getPageBackgroundColors(this, pages);
+        circleIndicatorView.setPageIndicators(pages.size());
     }
 
-    public void setPageIndicators(int quantity) {
-        for (int i = 0; i < quantity; i++) {
-            llIndicators.addView(new CircleIndicatorView(this));
-        }
+    public void setInactiveIndicatorColor(int color) {
+        circleIndicatorView.setInactiveIndicatorColor(color);
+    }
+
+    public void setActiveIndicatorColor(int color) {
+        circleIndicatorView.setActiveIndicatorColor(color);
     }
 
     public void setStatusBackgroundColor() {
@@ -75,6 +74,9 @@ public class OnboarderActivity extends AppCompatActivity implements View.OnClick
             vpOnboarderPager.setCurrentItem(vpOnboarderPager.getCurrentItem() + 1);
         } else if (i == R.id.btn_skip) {
             vpOnboarderPager.setCurrentItem(onboarderAdapter.getCount());
+            onSkipButtonPressed();
+        } else if (i == R.id.btn_finish) {
+            onFinishButtonPressed();
         }
     }
 
@@ -90,6 +92,7 @@ public class OnboarderActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onPageSelected(int position) {
         int lastPagePosition = onboarderAdapter.getCount() - 1;
+        circleIndicatorView.setCurrentPage(position);
         ibNext.setVisibility(position == lastPagePosition ? View.GONE : View.VISIBLE);
         btnFinish.setVisibility(position == lastPagePosition ? View.VISIBLE : View.GONE);
     }
@@ -98,5 +101,8 @@ public class OnboarderActivity extends AppCompatActivity implements View.OnClick
     public void onPageScrollStateChanged(int state) {
 
     }
+
+    abstract public void onSkipButtonPressed();
+    abstract public void onFinishButtonPressed();
 
 }

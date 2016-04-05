@@ -1,6 +1,7 @@
 package com.chyrta.androidonboarder;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.chyrta.onboarder.OnboarderActivity;
 import com.chyrta.onboarder.OnboarderAdapter;
@@ -27,14 +28,30 @@ public class IntroActivity extends OnboarderActivity {
         onboarderPage3.setTitleColor(R.color.colorPrimaryDark);
         onboarderPage3.setDescriptionColor(R.color.colorAccent);
         onboarderPage3.setBackgroundColor(R.color.colorAccent);
+        OnboarderPage onboarderPage4 = new OnboarderPage("Title 4", "Description 4");
+        onboarderPage4.setTitleColor(R.color.colorPrimaryDark);
+        onboarderPage4.setDescriptionColor(R.color.colorAccent);
+        onboarderPage4.setBackgroundColor(R.color.colorPrimaryDark);
 
         List<OnboarderPage> pages = new ArrayList<>();
 
         pages.add(onboarderPage1);
         pages.add(onboarderPage2);
         pages.add(onboarderPage3);
+        pages.add(onboarderPage4);
 
         setOnboardPagesReady(pages);
 
     }
+
+    @Override
+    public void onSkipButtonPressed() {
+        Toast.makeText(this, "Skip button was pressed!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onFinishButtonPressed() {
+        Toast.makeText(this, "Finish button was pressed", Toast.LENGTH_SHORT).show();
+    }
+
 }
