@@ -30,7 +30,7 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarder);
         setStatusBackgroundColor();
-        getSupportActionBar().hide();
+        hideActionBar();
         circleIndicatorView = (CircleIndicatorView) findViewById(R.id.circle_indicator_view);
         ibNext = (ImageButton) findViewById(R.id.ib_next);
         btnSkip = (Button) findViewById(R.id.btn_skip);
@@ -100,6 +100,12 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    private void hideActionBar() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
     }
 
     abstract public void onSkipButtonPressed();

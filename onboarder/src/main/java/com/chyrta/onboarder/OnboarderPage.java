@@ -20,35 +20,41 @@ public class OnboarderPage {
     public OnboarderPage(String title, String description) {
         this.title = title;
         this.description = description;
+        this.backgroundColor = R.color.black_transparent;
     }
 
     public OnboarderPage(String title, String description, int imageResourceId) {
         this.title = title;
         this.description = description;
         this.imageResourceId = imageResourceId;
+        this.backgroundColor = R.color.black_transparent;
     }
 
     public OnboarderPage(String title, String description, Drawable imageResource) {
         this.title = title;
         this.description = description;
         this.imageResource = imageResource;
+        this.backgroundColor = R.color.black_transparent;
     }
 
     public OnboarderPage(int title, int description) {
         this.titleResourceId = title;
         this.descriptionResourceId = description;
+        this.backgroundColor = R.color.black_transparent;
     }
 
     public OnboarderPage(int title, int description, int imageResourceId) {
         this.titleResourceId = title;
         this.descriptionResourceId = description;
         this.imageResourceId = imageResourceId;
+        this.backgroundColor = R.color.black_transparent;
     }
 
     public OnboarderPage(int title, int description, Drawable imageResource) {
         this.titleResourceId = title;
         this.descriptionResourceId = description;
         this.imageResource = imageResource;
+        this.backgroundColor = R.color.black_transparent;
     }
 
     public String getTitle() {
