@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.support.annotation.ColorRes;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -11,6 +12,7 @@ import com.chyrta.onboarder.R;
 
 public class CircleIndicatorView extends View {
 
+    private Context context;
     private Paint activeIndicatorPaint;
     private Paint inactiveIndicatorPaint;
     private int radius;
@@ -20,25 +22,26 @@ public class CircleIndicatorView extends View {
 
     public CircleIndicatorView(Context context) {
         super(context);
-        init();
+        init(context);
     }
 
     public CircleIndicatorView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
+        init(context);
     }
 
     public CircleIndicatorView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init();
+        init(context);
     }
 
-    private void init() {
+    private void init(Context context) {
+        this.context = context;
         activeIndicatorPaint = new Paint();
-        activeIndicatorPaint.setColor(getResources().getColor(R.color.active_indicator, null));
+        activeIndicatorPaint.setColor(ContextCompat.getColor(context, R.color.active_indicator));
         activeIndicatorPaint.setAntiAlias(true);
         inactiveIndicatorPaint = new Paint();
-        inactiveIndicatorPaint.setColor(getResources().getColor(R.color.inactive_indicator, null));
+        inactiveIndicatorPaint.setColor(ContextCompat.getColor(context, R.color.inactive_indicator));
         inactiveIndicatorPaint.setAntiAlias(true);
         radius = getResources().getDimensionPixelSize(R.dimen.indicator_size);
         size = radius * 2;
@@ -106,12 +109,12 @@ public class CircleIndicatorView extends View {
     }
 
     public void setInactiveIndicatorColor(@ColorRes int color) {
-        inactiveIndicatorPaint.setColor(getResources().getColor(color, null));
+        inactiveIndicatorPaint.setColor(ContextCompat.getColor(context, color));
         invalidate();
     }
 
     public void setActiveIndicatorColor(@ColorRes int color) {
-        activeIndicatorPaint.setColor(getResources().getColor(color, null));
+        activeIndicatorPaint.setColor(ContextCompat.getColor(context, color));
         invalidate();
     }
 
