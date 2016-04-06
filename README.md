@@ -14,7 +14,7 @@ Android Onboarder is a lightweight library that helps you to create a simple and
 Add dependency in your build.gradle
 
 ```groovy
-compile 'com.github.chyrta:AndroidOnboarder:0.2'
+compile 'com.github.chyrta:AndroidOnboarder:0.3'
 ```
 #### Maven
 
@@ -22,7 +22,7 @@ compile 'com.github.chyrta:AndroidOnboarder:0.2'
 <dependency>
     <groupId>com.github.chyrta</groupId>
     <artifactId>AndroidOnboarder</artifactId>
-    <version>0.2</version>
+    <version>0.3</version>
     <type>pom</type>
 </dependency>
 ```
