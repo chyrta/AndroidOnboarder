@@ -5,7 +5,8 @@
 # Android Onboarder
 Android Onboarder is a lightweight library that helps you to create a simple and beautiful welcome screen (as known as App Intro, Onboarding Experience and etc.) for your users.
 
-![alt tag](https://raw.githubusercontent.com/chyrta/AndroidOnboarder/master/art/androidOnboarder.gif)
+<image src="https://raw.githubusercontent.com/GrenderG/AndroidOnboarder/master/art/demo1.gif" width="250px">
+<image src="https://raw.githubusercontent.com/GrenderG/AndroidOnboarder/master/art/demo2.gif" width="250px">
 
 ## Usage
 
@@ -27,7 +28,9 @@ compile 'com.github.chyrta:AndroidOnboarder:0.3'
 </dependency>
 ```
 
-2. Create an activity which should inherits from OnboarderActivity. Look at the example below to see how that library works.
+#### Implementation
+
+Create an activity which should inherits from OnboarderActivity. Look at the example below to see how that library works.
 
 ```java
 
@@ -71,6 +74,21 @@ public class IntroActivity extends OnboarderActivity {
 
 }
 ```
+
+#### Tips
+
+Remember that you can change dot's colors (active and inactive) and darken the layout where buttons are placed.
+(Inside your Activity that extends ```OnboarderActivity```):
+
+```java
+
+setActiveIndicatorColor(android.R.color.white);
+setInactiveIndicatorColor(android.R.color.darker_gray);
+shouldDarkenButtonsLayout(true);
+
+```
+
+
 ## Contributions
 
 Feel free to create issues and pull requests
@@ -79,7 +97,7 @@ Feel free to create issues and pull requests
 
 ```
 The MIT License (MIT)
-Copyright (c) 2016 Dzmitry Chyrta
+Copyright (c) 2016 Dzmitry Chyrta and Daniel Morales
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
