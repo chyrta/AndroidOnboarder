@@ -1,3 +1,7 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidOnboarder-green.svg?style=true)](https://android-arsenal.com/details/1/3393)
+
+![Maven Badge](https://maven-badges.herokuapp.com/maven-central/com.github.chyrta/AndroidOnboarder/badge.svg)
+
 # Android Onboarder
 Android Onboarder is a lightweight library that helps you to create a simple and beautiful welcome screen (as known as App Intro, Onboarding Experience and etc.) for your users.
 
@@ -16,10 +20,10 @@ compile 'com.github.chyrta:AndroidOnboarder:0.2'
 
 ```
 <dependency>
-  <groupId>com.github</groupId>
-  <artifactId>AndroidOnboarder</artifactId>
-  <version>0.2</version>
-  <type>pom</type>
+    <groupId>com.github.chyrta</groupId>
+    <artifactId>AndroidOnboarder</artifactId>
+    <version>0.2</version>
+    <type>pom</type>
 </dependency>
 ```
 
