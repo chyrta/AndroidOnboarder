@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_margin">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/iv_onboarder_image"
-            android:layout_width="@dimen/section_image_item"
-            android:layout_height="@dimen/section_image_item"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:alpha="1.0"
-            android:scaleType="fitCenter"/>
+    <ImageView
+        android:id="@+id/iv_onboarder_image"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/section_image_item"
+        android:adjustViewBounds="true"
+        android:alpha="1.0"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"/>
 
-    </FrameLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
+        android:layout_weight="1"
         android:padding="@dimen/activity_margin">
 
         <TextView
@@ -50,4 +48,4 @@
 
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

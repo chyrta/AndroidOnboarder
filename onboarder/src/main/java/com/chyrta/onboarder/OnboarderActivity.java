@@ -1,13 +1,16 @@
 package com.chyrta.onboarder;
 
 import android.animation.ArgbEvaluator;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.chyrta.onboarder.utils.ColorsArrayBuilder;
@@ -23,7 +26,11 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
     private OnboarderAdapter onboarderAdapter;
     private ImageButton ibNext;
     private Button btnSkip, btnFinish;
+    private FrameLayout buttonsLayout;
+    private View divider;
     private ArgbEvaluator evaluator;
+
+    private boolean shouldDarkenButtonsLayout = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,8 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
         ibNext = (ImageButton) findViewById(R.id.ib_next);
         btnSkip = (Button) findViewById(R.id.btn_skip);
         btnFinish = (Button) findViewById(R.id.btn_finish);
+        buttonsLayout = (FrameLayout) findViewById(R.id.buttons_layout);
+        divider = findViewById(R.id.divider);
         vpOnboarderPager = (ViewPager) findViewById(R.id.vp_onboarder_pager);
         vpOnboarderPager.addOnPageChangeListener(this);
         ibNext.setOnClickListener(this);
@@ -51,11 +60,22 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
     }
 
     public void setInactiveIndicatorColor(int color) {
-        circleIndicatorView.setInactiveIndicatorColor(color);
+        this.circleIndicatorView.setInactiveIndicatorColor(color);
     }
 
     public void setActiveIndicatorColor(int color) {
-        circleIndicatorView.setActiveIndicatorColor(color);
+        this.circleIndicatorView.setActiveIndicatorColor(color);
+    }
+
+    public void shouldDarkenButtonsLayout(boolean shouldDarkenButtonsLayout) {
+        this.shouldDarkenButtonsLayout = shouldDarkenButtonsLayout;
+    }
+
+    private int darkenColor(@ColorInt int color) {
+        float[] hsv = new float[3];
+        Color.colorToHSV(color, hsv);
+        hsv[2] *= 0.9f;
+        return Color.HSVToColor(hsv);
     }
 
     public void setStatusBackgroundColor() {
@@ -84,8 +104,16 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         if(position < (onboarderAdapter.getCount() - 1) && position < (colors.length - 1)) {
             vpOnboarderPager.setBackgroundColor((Integer) evaluator.evaluate(positionOffset, colors[position], colors[position + 1]));
+            if (shouldDarkenButtonsLayout) {
+                buttonsLayout.setBackgroundColor(darkenColor((Integer) evaluator.evaluate(positionOffset, colors[position], colors[position + 1])));
+                divider.setVisibility(View.GONE);
+            }
         } else {
             vpOnboarderPager.setBackgroundColor(colors[colors.length - 1]);
+            if(shouldDarkenButtonsLayout) {
+                buttonsLayout.setBackgroundColor(darkenColor(colors[colors.length - 1]));
+                divider.setVisibility(View.GONE);
+            }
         }
     }
 
