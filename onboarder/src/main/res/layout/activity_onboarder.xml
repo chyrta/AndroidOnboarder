@@ -18,8 +18,7 @@
         android:layout_height="1dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="?attr/actionBarSize"
-        android:alpha="0.12"
-        android:background="@android:color/white"/>
+        android:background="?android:attr/listDivider"/>
 
     <FrameLayout
         android:id="@+id/buttons_layout"
@@ -76,5 +75,14 @@
             android:tint="@color/white"/>
 
     </FrameLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/activity_margin"
+        android:visibility="gone"
+        android:src="@drawable/ic_arrow_forward_white_24dp" />
 
 </android.support.design.widget.CoordinatorLayout>

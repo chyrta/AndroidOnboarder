@@ -82,7 +82,7 @@ Remember that you can (Inside your Activity that extends ```OnboarderActivity```
 - Change dot's colors (active and inactive)
 - Darken the layout where buttons are placed
 - Change divider color, height (in dp) and visibility
-- Choose to use ```FloatingActionButton``` or not
+- Chose to use ```FloatingActionButton``` or not
 
 ```java
 
