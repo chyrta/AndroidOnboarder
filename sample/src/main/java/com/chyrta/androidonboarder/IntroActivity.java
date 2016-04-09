@@ -1,6 +1,8 @@
 package com.chyrta.androidonboarder;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
 import android.widget.Toast;
 
 import com.chyrta.onboarder.OnboarderActivity;
@@ -35,7 +37,7 @@ public class IntroActivity extends OnboarderActivity {
         }
 
         setOnboardPagesReady(pages);
-        
+
     }
 
     @Override
