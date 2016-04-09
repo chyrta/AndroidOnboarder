@@ -20,8 +20,8 @@ allprojects {
 
 ext {
     ARTIFACT_ID = 'AndroidOnboarder'
-    VERSION_NAME = '0.4'
-    VERSION_CODE = 3 //your version
+    VERSION_NAME = '0.5'
+    VERSION_CODE = 4
     DESCRIPTION = 'A light-weight library to create beauty onboarding experience in Material Design'
     SITE_URL = 'https://github.com/chyrta'
     GIT_URL = 'https://github.com/chyrta/AndroidOnboarder'
