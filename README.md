@@ -41,6 +41,7 @@ public class IntroActivity extends OnboarderActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
     onboarderPages = new ArrayList<OnboarderPage>();
 
     // Create your first page
