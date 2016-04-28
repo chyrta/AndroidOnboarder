@@ -16,6 +16,8 @@ public class OnboarderPage {
     @ColorRes public int titleColor;
     @ColorRes public int descriptionColor;
     @ColorRes public int backgroundColor;
+    public float titleTextSize;
+    public float descriptionTextSize;
 
     public OnboarderPage(String title, String description) {
         this.title = title;
@@ -104,4 +106,21 @@ public class OnboarderPage {
     public int getBackgroundColor() {
         return backgroundColor;
     }
+
+    public float getTitleTextSize() {
+        return titleTextSize;
+    }
+
+    public void setTitleTextSize(float titleTextSize) {
+        this.titleTextSize = titleTextSize;
+    }
+
+    public float getDescriptionTextSize() {
+        return descriptionTextSize;
+    }
+
+    public void setDescriptionTextSize(float descriptionTextSize) {
+        this.descriptionTextSize = descriptionTextSize;
+    }
+
 }

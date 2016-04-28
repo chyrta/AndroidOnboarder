@@ -1,11 +1,11 @@
 package com.chyrta.onboarder;
 
 import android.animation.ArgbEvaluator;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
+import android.support.annotation.StringRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -94,6 +94,26 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
         this.divider.setVisibility(dividerVisibility);
     }
 
+    public void setSkipButtonTitle(CharSequence title) {
+        this.btnSkip.setText(title);
+    }
+
+    public void setSkipButtonHidden() {
+        this.btnSkip.setVisibility(View.GONE);
+    }
+
+    public void setSkipButtonTitle(@StringRes int titleResId) {
+        this.btnSkip.setText(titleResId);
+    }
+
+    public void setFinishButtonTitle(CharSequence title) {
+        this.btnFinish.setText(title);
+    }
+
+    public void setFinishButtonTitle(@StringRes int titleResId) {
+        this.btnFinish.setText(titleResId);
+    }
+
     public void shouldUseFloatingActionButton(boolean shouldUseFloatingActionButton) {
 
         this.shouldUseFloatingActionButton = shouldUseFloatingActionButton;
@@ -136,7 +156,6 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
         if (i == R.id.ib_next || i == R.id.fab && !isInLastPage) {
             vpOnboarderPager.setCurrentItem(vpOnboarderPager.getCurrentItem() + 1);
         } else if (i == R.id.btn_skip) {
-            vpOnboarderPager.setCurrentItem(onboarderAdapter.getCount());
             onSkipButtonPressed();
         } else if (i == R.id.btn_finish || i == R.id.fab && isInLastPage) {
             onFinishButtonPressed();
@@ -181,7 +200,10 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
         }
     }
 
-    abstract public void onSkipButtonPressed();
+    protected void onSkipButtonPressed() {
+        vpOnboarderPager.setCurrentItem(onboarderAdapter.getCount());
+    }
+
     abstract public void onFinishButtonPressed();
 
 }

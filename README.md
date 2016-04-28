@@ -66,6 +66,8 @@ public class IntroActivity extends OnboarderActivity {
 
   @Override
   public void onSkipButtonPressed() {
+    // Optional: by default it skips onboarder to the end
+    super.onSkipButtonPressed();
     // Define your actions when the user press 'Skip' button
   }
 
@@ -84,6 +86,9 @@ Remember that you can (Inside your Activity that extends ```OnboarderActivity```
 - Darken the layout where buttons are placed
 - Change divider color, height (in dp) and visibility
 - Choose to use ```FloatingActionButton``` or not
+- Set text size of title and description
+- Set title to skip and finish buttons
+- Hide skip button from the user
 
 ```java
 
@@ -94,7 +99,11 @@ setDividerColor(Color.WHITE);
 setDividerHeight(2);
 setDividerVisibility(View.GONE);
 shouldUseFloatingActionButton(true);
-
+setSkipButtonTitle("Skip");
+setFinishButton("Finish");
+setSkipButtonHidden();
+setTitleTextSize(12);
+setDescriptionTextSize(12);
 ```
 
 

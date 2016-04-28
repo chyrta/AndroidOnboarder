@@ -26,14 +26,14 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:design:23.2.1'
+    compile "com.android.support:appcompat-v7:$support_library_version"
+    compile "com.android.support:design:$support_library_version"
 }
 
 publish {
     groupId = 'com.github.chyrta'
     artifactId = 'AndroidOnboarder'
-    publishVersion = '0.5'
+    publishVersion = '0.6'
     desc = 'A light-weight library to create beauty onboarding experience in Material Design'
     licences = ['MIT']
     website = 'https://github.com/chyrta/AndroidOnboarder'

@@ -1,8 +1,6 @@
 package com.chyrta.androidonboarder;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.view.View;
 import android.widget.Toast;
 
 import com.chyrta.onboarder.OnboarderActivity;
@@ -36,12 +34,16 @@ public class IntroActivity extends OnboarderActivity {
             page.setDescriptionColor(R.color.secondary_text);
         }
 
+        setSkipButtonTitle("Skip");
+        setFinishButtonTitle("Finish");
+
         setOnboardPagesReady(pages);
 
     }
 
     @Override
     public void onSkipButtonPressed() {
+        super.onSkipButtonPressed();
         Toast.makeText(this, "Skip button was pressed!", Toast.LENGTH_SHORT).show();
     }
 
