@@ -72,7 +72,7 @@ public class IntroActivity extends OnboarderActivity {
   }
 
   @Override
-  public void onFinishButtonPressed()
+  public void onFinishButtonPressed() {
     // Define your actions when the user press 'Finish' button
   }
 
