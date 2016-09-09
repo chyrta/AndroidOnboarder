@@ -1,6 +1,10 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
+repositories {
+    jcenter()
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -24,8 +28,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+
     compile "com.android.support:appcompat-v7:$support_library_version"
     compile "com.android.support:design:$support_library_version"
 }
@@ -37,4 +41,74 @@ publish {
     desc = 'A light-weight library to create beauty onboarding experience in Material Design'
     licences = ['MIT']
     website = 'https://github.com/chyrta/AndroidOnboarder'
+}
+
+ext {
+    ARTIFACT_ID = 'AndroidOnboarder'
+    VERSION_NAME = '0.6'
+    VERSION_CODE = 5
+    DESCRIPTION = 'A light-weight library to create beauty onboarding experience in Material Design'
+    SITE_URL = 'https://github.com/chyrta'
+    GIT_URL = 'https://github.com/chyrta/AndroidOnboarder'
+    GROUP_NAME = 'com.github.chyrta'
+    MODULE_NAME = 'onboarder'
+    COMPILE_SDK = 23
+    BUILD_TOOLS = '23.0.3'
+    LICENSE = 'MIT'
+    IS_UPLOADING = project.getGradle().startParameter.taskNames.any{it.contains('bintrayUpload')}
+}
+
+subprojects {
+    group = GROUP_NAME
+    version = VERSION_CODE
+
+    if (IS_UPLOADING && project.name in [MODULE_NAME]) {
+        println project.name
+        apply plugin: 'maven'
+
+        gradle.taskGraph.whenReady { taskGraph ->
+            taskGraph.getAllTasks().find {
+                it.path == ":$project.name:generatePomFileForMavenPublication"
+            }.doLast {
+                file("build/publications/maven/pom-default.xml").delete()
+                println 'Overriding pom-file to make sure we can sync to maven central!'
+                pom {
+                    //noinspection GroovyAssignabilityCheck
+                    project {
+                        name "$project.name"
+                        artifactId ARTIFACT_ID
+                        packaging project.name == 'compiler' ? 'jar' : 'aar'
+                        description DESCRIPTION
+                        url SITE_URL
+                        version VERSION_NAME
+
+                        scm {
+                            url GIT_URL
+                            connection GIT_URL
+                            developerConnection GIT_URL
+                        }
+
+                        licenses {
+                            license {
+                                name LICENSE
+                            }
+                        }
+
+                        developers {
+                            developer {
+                                id 'chyrta'
+                                name 'Dzmitry Chyrta'
+                                email 'dima@chyrta.com'
+                            }
+                        }
+                    }
+                }.writeTo("build/publications/maven/pom-default.xml")
+            }
+        }
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
