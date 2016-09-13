@@ -4,4 +4,5 @@
    <dimen name="indicator_size">8dp</dimen>
 
    <dimen name="margin_between_title_and_description">8dp</dimen>
+   <dimen name="text_section_min_height">150dp</dimen>
 </resources>

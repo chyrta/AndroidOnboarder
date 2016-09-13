@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
    xmlns:android="http://schemas.android.com/apk/res/android"
    xmlns:tools="http://schemas.android.com/tools"
-   android:orientation="vertical"
    android:layout_width="match_parent"
    android:layout_height="match_parent"
    android:padding="@dimen/activity_margin"
-   tools:background="@android:color/black"
+   tools:background="#00AA00"
 >
 
    <FrameLayout
       android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:layout_weight="2"
+      android:layout_height="match_parent"
+      android:layout_alignParentTop="true"
+      android:layout_above="@+id/linlayText"
       android:layout_margin="@dimen/activity_margin"
+      tools:background="#FF0000"
    >
       <ImageView
          android:id="@+id/iv_onboarder_image"
@@ -23,31 +24,29 @@
          android:layout_gravity="bottom|center_horizontal"
          android:scaleType="fitCenter"
          android:contentDescription="@null"
-         tools:background="@color/white"
-         tools:layout_width="100dp"
-         tools:layout_height="100dp"
+         tools:background="@drawable/DieForMusic"
       />
-      <!--android:alpha="1.0"-->
    </FrameLayout>
 
-
    <LinearLayout
+      android:id="@+id/linlayText"
       android:layout_width="wrap_content"
-      android:layout_height="0dp"
-      android:layout_gravity="center"
-      android:gravity="center"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"
+      android:minHeight="@dimen/text_section_min_height"
+      android:gravity="top|center_horizontal"
       android:orientation="vertical"
-      android:layout_weight="1"
       android:padding="@dimen/activity_margin"
+      tools:background="#660000FF"
    >
-
       <TextView
          android:id="@+id/tv_onboarder_title"
          style="@style/TextAppearance.AppCompat.Headline"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:textColor="@color/white"
-         tools:text="Section First"
+         tools:text="Section Title"
       />
 
       <TextView
@@ -59,8 +58,9 @@
          android:alpha="0.7"
          android:gravity="center"
          android:textColor="@color/white"
-         tools:text="A long description about my application"
+         tools:text="A long description about my application."
       />
-
    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
+
+   <!--tools:text="A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application."-->
