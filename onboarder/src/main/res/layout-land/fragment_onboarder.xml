@@ -22,7 +22,7 @@
          android:adjustViewBounds="true"
          android:scaleType="fitCenter"
          android:contentDescription="@null"
-         tools:background="@drawable/die"
+         tools:background="@drawable/DieForMusic"
       />
    </FrameLayout>
 
