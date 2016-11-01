@@ -9,7 +9,7 @@ import java.util.List;
 
 public class OnboarderAdapter extends FragmentStatePagerAdapter {
 
-    List<OnboarderPage> pages = new ArrayList<OnboarderPage>();
+    List<OnboarderPage> pages = new ArrayList<>();
 
     public OnboarderAdapter(List<OnboarderPage> pages, FragmentManager fm) {
         super(fm);
