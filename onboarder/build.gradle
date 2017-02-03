@@ -52,7 +52,7 @@ ext {
     GIT_URL = 'https://github.com/chyrta/AndroidOnboarder'
     GROUP_NAME = 'com.github.chyrta'
     MODULE_NAME = 'onboarder'
-    COMPILE_SDK = 23
+    COMPILE_SDK = 25
     BUILD_TOOLS = '25.0.2'
     LICENSE = 'MIT'
     IS_UPLOADING = project.getGradle().startParameter.taskNames.any{it.contains('bintrayUpload')}
