@@ -24,7 +24,7 @@
          android:layout_gravity="bottom|center_horizontal"
          android:scaleType="fitCenter"
          android:contentDescription="@null"
-         tools:background="@drawable/DieForMusic"
+         tools:background="@drawable/die_for_music"
       />
    </FrameLayout>
 
