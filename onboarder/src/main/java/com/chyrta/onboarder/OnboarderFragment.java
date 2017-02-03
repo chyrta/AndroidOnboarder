@@ -7,6 +7,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.content.res.AppCompatResources;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -114,7 +115,7 @@ public class OnboarderFragment extends Fragment
 		}
 
 		if (onboarderImageResId != 0) {
-			ivOnboarderImage.setImageDrawable(ContextCompat.getDrawable(getActivity(), onboarderImageResId));
+			ivOnboarderImage.setImageDrawable(AppCompatResources.getDrawable(getActivity(), onboarderImageResId));
 		}
 
 		if (onboarderTitleTextSize != 0f) {
