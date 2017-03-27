@@ -6,12 +6,12 @@ repositories {
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -52,8 +52,8 @@ ext {
     GIT_URL = 'https://github.com/chyrta/AndroidOnboarder'
     GROUP_NAME = 'com.github.chyrta'
     MODULE_NAME = 'onboarder'
-    COMPILE_SDK = 23
-    BUILD_TOOLS = '23.0.3'
+    COMPILE_SDK = 25
+    BUILD_TOOLS = '25.0.2'
     LICENSE = 'MIT'
     IS_UPLOADING = project.getGradle().startParameter.taskNames.any{it.contains('bintrayUpload')}
 }
