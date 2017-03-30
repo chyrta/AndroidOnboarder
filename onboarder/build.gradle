@@ -37,7 +37,7 @@ dependencies {
 publish {
     groupId = 'com.github.chyrta'
     artifactId = 'AndroidOnboarder'
-    publishVersion = '0.6'
+    publishVersion = '0.7'
     desc = 'A light-weight library to create beauty onboarding experience in Material Design'
     licences = ['MIT']
     website = 'https://github.com/chyrta/AndroidOnboarder'
@@ -45,8 +45,8 @@ publish {
 
 ext {
     ARTIFACT_ID = 'AndroidOnboarder'
-    VERSION_NAME = '0.6'
-    VERSION_CODE = 5
+    VERSION_NAME = '0.7'
+    VERSION_CODE = 6
     DESCRIPTION = 'A light-weight library to create beauty onboarding experience in Material Design'
     SITE_URL = 'https://github.com/chyrta'
     GIT_URL = 'https://github.com/chyrta/AndroidOnboarder'
@@ -106,9 +106,4 @@ subprojects {
             }
         }
     }
-}
-
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
