@@ -1,0 +1,15 @@
+machine:
+  environment:
+    GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
+    JAVA_OPTS: "-Xms512m -Xmx2048m"
+    ANDROID_HOME: /usr/local/android-sdk-linux
+    TERM: "dumb"
+  java:
+    version: oraclejdk8
+dependencies:
+    pre:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.2,android-25,extra-google-m2repository,extra-google-google_play_services,extra-android-support,extra-android-m2repository
+    cache_directories:
+        - /usr/local/android-sdk-linux/platforms/android-25
+        - /usr/local/android-sdk-linux/build-tools/25.0.2
+        - /usr/local/android-sdk-linux/extras/android/m2repository
