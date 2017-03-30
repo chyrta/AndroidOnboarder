@@ -1,66 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-   xmlns:android="http://schemas.android.com/apk/res/android"
-   xmlns:tools="http://schemas.android.com/tools"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent"
-   android:padding="@dimen/activity_margin"
-   tools:background="#00AA00"
->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_margin"
+    tools:background="#00AA00">
 
-   <FrameLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_alignParentTop="true"
-      android:layout_above="@+id/linlayText"
-      android:layout_margin="@dimen/activity_margin"
-      tools:background="#FF0000"
-   >
-      <ImageView
-         android:id="@+id/iv_onboarder_image"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:adjustViewBounds="true"
-         android:layout_gravity="bottom|center_horizontal"
-         android:scaleType="fitCenter"
-         android:contentDescription="@null"
-         tools:background="@drawable/die_for_music"
-      />
-   </FrameLayout>
 
-   <LinearLayout
-      android:id="@+id/linlayText"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
-      android:layout_centerHorizontal="true"
-      android:minHeight="@dimen/text_section_min_height"
-      android:gravity="top|center_horizontal"
-      android:orientation="vertical"
-      android:padding="@dimen/activity_margin"
-      tools:background="#660000FF"
-   >
-      <TextView
-         android:id="@+id/tv_onboarder_title"
-         style="@style/TextAppearance.AppCompat.Headline"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:textColor="@color/white"
-         tools:text="Section Title"
-      />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linlayText"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/activity_margin"
+        tools:background="#FF0000">
 
-      <TextView
-         android:id="@+id/tv_onboarder_description"
-         style="@style/TextAppearance.AppCompat.Body1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="@dimen/margin_between_title_and_description"
-         android:alpha="0.7"
-         android:gravity="center"
-         android:textColor="@color/white"
-         tools:text="A long description about my application."
-      />
-   </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_onboarder_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            tools:background="@drawable/die_for_music" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linlayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="top|center_horizontal"
+        android:minHeight="@dimen/text_section_min_height"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_margin"
+        tools:background="#660000FF">
+
+        <TextView
+            android:id="@+id/tv_onboarder_title"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            tools:text="Section Title" />
+
+        <TextView
+            android:id="@+id/tv_onboarder_description"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_between_title_and_description"
+            android:alpha="0.7"
+            android:gravity="center"
+            android:textColor="@color/white"
+            tools:text="A long description about my application." />
+    </LinearLayout>
 </RelativeLayout>
-
-   <!--tools:text="A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application. A long description about my application."-->
