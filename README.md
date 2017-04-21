@@ -1,13 +1,9 @@
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidOnboarder-green.svg?style=true)](https://android-arsenal.com/details/1/3393)
-
-![Maven Badge](https://maven-badges.herokuapp.com/maven-central/com.github.chyrta/AndroidOnboarder/badge.svg)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidOnboarder-green.svg?style=true)](https://android-arsenal.com/details/1/3393) ![Maven Badge](https://maven-badges.herokuapp.com/maven-central/com.github.chyrta/AndroidOnboarder/badge.svg) [![CircleCI](https://circleci.com/gh/chyrta/AndroidOnboarder.svg?style=svg)](https://circleci.com/gh/chyrta/AndroidOnboarder)
 
 # Android Onboarder
 Android Onboarder is a lightweight library that helps you to create a simple and beautiful welcome screen (as known as App Intro, Onboarding Experience and etc.) for your users.
 
-<image src="https://raw.githubusercontent.com/GrenderG/AndroidOnboarder/master/art/demo1.gif" width="250px">
-<image src="https://raw.githubusercontent.com/GrenderG/AndroidOnboarder/master/art/demo2.gif" width="250px">
-<image src="https://raw.githubusercontent.com/GrenderG/AndroidOnboarder/master/art/demo3.gif" width="250px">
+<image src="https://raw.githubusercontent.com/chyrta/AndroidOnboarder/master/art/demo1.gif" width="250px"> <image src="https://raw.githubusercontent.com/chyrta/AndroidOnboarder/master/art/demo2.gif" width="250px"> <image src="https://raw.githubusercontent.com/chyrta/AndroidOnboarder/master/art/demo3.gif" width="250px">
 
 ## Usage
 
@@ -16,7 +12,7 @@ Android Onboarder is a lightweight library that helps you to create a simple and
 Add dependency in your build.gradle
 
 ```groovy
-compile 'com.github.chyrta:AndroidOnboarder:0.6'
+compile 'com.github.chyrta:AndroidOnboarder:0.7'
 ```
 #### Maven
 
@@ -24,7 +20,7 @@ compile 'com.github.chyrta:AndroidOnboarder:0.6'
 <dependency>
     <groupId>com.github.chyrta</groupId>
     <artifactId>AndroidOnboarder</artifactId>
-    <version>0.6</version>
+    <version>0.7</version>
     <type>pom</type>
 </dependency>
 ```
@@ -116,7 +112,7 @@ Feel free to create issues and pull requests
 ```
 MIT License
 
-Copyright (c) 2016 Dzmitry Chyrta, Daniel Morales
+Copyright (c) 2017 Dzmitry Chyrta, Daniel Morales
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
