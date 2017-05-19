@@ -18,25 +18,27 @@ import android.widget.TextView;
 public class OnboarderFragment extends Fragment
 {
 
-	private static final String ONBOARDER_PAGE_TITLE                 = "onboarder_page_title";
-	private static final String ONBOARDER_PAGE_TITLE_RES_ID          = "onboarder_page_title_res_id";
-	private static final String ONBOARDER_PAGE_TITLE_COLOR           = "onboarder_page_title_color";
-	private static final String ONBOARDER_PAGE_TITLE_TEXT_SIZE       = "onboarder_page_title_text_size";
-	private static final String ONBOARDER_PAGE_DESCRIPTION           = "onboarder_page_description";
-	private static final String ONBOARDER_PAGE_DESCRIPTION_RES_ID    = "onboarder_page_description_res_id";
-	private static final String ONBOARDER_PAGE_DESCRIPTION_COLOR     = "onborader_page_description_color";
-	private static final String ONBOARDER_PAGE_DESCRIPTION_TEXT_SIZE = "onboarder_page_description_text_size";
-	private static final String ONBOARDER_PAGE_IMAGE_RES_ID          = "onboarder_page_iamge_res_id";
+	private static final String ONBOARDER_PAGE_TITLE                 		= "onboarder_page_title";
+	private static final String ONBOARDER_PAGE_TITLE_RES_ID          		= "onboarder_page_title_res_id";
+	private static final String ONBOARDER_PAGE_TITLE_COLOR           		= "onboarder_page_title_color";
+	private static final String ONBOARDER_PAGE_TITLE_TEXT_SIZE       		= "onboarder_page_title_text_size";
+	private static final String ONBOARDER_PAGE_DESCRIPTION           		= "onboarder_page_description";
+	private static final String ONBOARDER_PAGE_DESCRIPTION_RES_ID    		= "onboarder_page_description_res_id";
+	private static final String ONBOARDER_PAGE_DESCRIPTION_COLOR     		= "onborader_page_description_color";
+	private static final String ONBOARDER_PAGE_DESCRIPTION_TEXT_SIZE 		= "onboarder_page_description_text_size";
+	private static final String ONBOARDER_PAGE_DESCRIPTION_CENTERED 		= "onboarder_page_description_centered";
+	private static final String ONBOARDER_PAGE_IMAGE_RES_ID          		= "onboarder_page_iamge_res_id";
 
-	private              String onboarderTitle;
-	private              String onboarderDescription;
-	@StringRes private   int    onboarderTitleResId;
-	@ColorRes private    int    onboarderTitleColor;
-	@StringRes private   int    onboarderDescriptionResId;
-	@ColorRes private    int    onboarderDescriptionColor;
-	@DrawableRes private int    onboarderImageResId;
-	private              float  onboarderTitleTextSize;
-	private              float  onboarderDescriptionTextSize;
+	private              String 	onboarderTitle;
+	private              String 	onboarderDescription;
+	@StringRes private   int    	onboarderTitleResId;
+	@ColorRes private    int    	onboarderTitleColor;
+	@StringRes private   int    	onboarderDescriptionResId;
+	@ColorRes private    int    	onboarderDescriptionColor;
+	@DrawableRes private int    	onboarderImageResId;
+	private              float  	onboarderTitleTextSize;
+	private              float  	onboarderDescriptionTextSize;
+	private				 boolean	onboarderDescriptionTextCentered;
 
 	private View      onboarderView;
 	private ImageView ivOnboarderImage;
@@ -58,6 +60,7 @@ public class OnboarderFragment extends Fragment
 		args.putInt(ONBOARDER_PAGE_IMAGE_RES_ID, page.getImageResourceId());
 		args.putFloat(ONBOARDER_PAGE_TITLE_TEXT_SIZE, page.getTitleTextSize());
 		args.putFloat(ONBOARDER_PAGE_DESCRIPTION_TEXT_SIZE, page.getDescriptionTextSize());
+		args.putBoolean(ONBOARDER_PAGE_DESCRIPTION_CENTERED, page.isMultilineDescriptionCentered());
 		OnboarderFragment fragment = new OnboarderFragment();
 		fragment.setArguments(args);
 		return fragment;
@@ -83,6 +86,7 @@ public class OnboarderFragment extends Fragment
 		onboarderDescriptionResId = bundle.getInt(ONBOARDER_PAGE_DESCRIPTION_RES_ID, 0);
 		onboarderDescriptionColor = bundle.getInt(ONBOARDER_PAGE_DESCRIPTION_COLOR, 0);
 		onboarderDescriptionTextSize = bundle.getFloat(ONBOARDER_PAGE_DESCRIPTION_TEXT_SIZE, 0f);
+		onboarderDescriptionTextCentered = bundle.getBoolean(ONBOARDER_PAGE_DESCRIPTION_CENTERED, false);
 		onboarderImageResId = bundle.getInt(ONBOARDER_PAGE_IMAGE_RES_ID, 0);
 
 		onboarderView = inflater.inflate(R.layout.fragment_onboarder, container, false);
@@ -138,11 +142,10 @@ public class OnboarderFragment extends Fragment
 		{
 			@Override
 			public void run() {
-				if (tvOnboarderDescription.getLineCount() > 1) {
-					tvOnboarderDescription.setGravity(Gravity.START);
-				}
-				else {
+				if (onboarderDescriptionTextCentered) {
 					tvOnboarderDescription.setGravity(Gravity.CENTER);
+				} else {
+					tvOnboarderDescription.setGravity(tvOnboarderDescription.getLineCount() > 1 ? Gravity.START : Gravity.CENTER);
 				}
 			}
 		});

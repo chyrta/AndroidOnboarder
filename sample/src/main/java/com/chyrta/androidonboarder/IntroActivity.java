@@ -32,6 +32,7 @@ public class IntroActivity extends OnboarderActivity {
         for (OnboarderPage page : pages) {
             page.setTitleColor(R.color.primary_text);
             page.setDescriptionColor(R.color.secondary_text);
+            page.setMultilineDescriptionCentered(true);
         }
 
         setSkipButtonTitle("Skip");

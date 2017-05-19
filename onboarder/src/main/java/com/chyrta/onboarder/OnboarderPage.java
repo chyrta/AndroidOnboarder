@@ -18,6 +18,7 @@ public class OnboarderPage {
     @ColorRes public int backgroundColor;
     public float titleTextSize;
     public float descriptionTextSize;
+    public boolean multilineDescriptionCentered;
 
     public OnboarderPage(String title, String description) {
         this.title = title;
@@ -123,4 +124,11 @@ public class OnboarderPage {
         this.descriptionTextSize = descriptionTextSize;
     }
 
+    public boolean isMultilineDescriptionCentered() {
+        return multilineDescriptionCentered;
+    }
+
+    public void setMultilineDescriptionCentered(boolean multilineDescriptionCentered) {
+        this.multilineDescriptionCentered = multilineDescriptionCentered;
+    }
 }
