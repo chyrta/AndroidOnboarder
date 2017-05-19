@@ -83,6 +83,7 @@ Remember that you can (Inside your Activity that extends ```OnboarderActivity```
 - Change divider color, height (in dp) and visibility
 - Choose to use ```FloatingActionButton``` or not
 - Set text size of title and description
+- Force multiline description to be centered
 - Set title to skip and finish buttons
 - Hide skip button from the user
 
@@ -100,6 +101,7 @@ setFinishButton("Finish");
 setSkipButtonHidden();
 setTitleTextSize(12);
 setDescriptionTextSize(12);
+setMultilineDescriptionCentered(true);
 ```
 
 
