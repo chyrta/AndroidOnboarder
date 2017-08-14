@@ -6,12 +6,12 @@ repositories {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -37,7 +37,7 @@ dependencies {
 publish {
     groupId = 'com.github.chyrta'
     artifactId = 'AndroidOnboarder'
-    publishVersion = '0.7'
+    publishVersion = '0.8'
     desc = 'A light-weight library to create beauty onboarding experience in Material Design'
     licences = ['MIT']
     website = 'https://github.com/chyrta/AndroidOnboarder'
@@ -45,15 +45,15 @@ publish {
 
 ext {
     ARTIFACT_ID = 'AndroidOnboarder'
-    VERSION_NAME = '0.7'
-    VERSION_CODE = 6
+    VERSION_NAME = '0.8'
+    VERSION_CODE = 7
     DESCRIPTION = 'A light-weight library to create beauty onboarding experience in Material Design'
     SITE_URL = 'https://github.com/chyrta'
     GIT_URL = 'https://github.com/chyrta/AndroidOnboarder'
     GROUP_NAME = 'com.github.chyrta'
     MODULE_NAME = 'onboarder'
-    COMPILE_SDK = 25
-    BUILD_TOOLS = '25.0.2'
+    COMPILE_SDK = 26
+    BUILD_TOOLS = '26.0.1'
     LICENSE = 'MIT'
     IS_UPLOADING = project.getGradle().startParameter.taskNames.any{it.contains('bintrayUpload')}
 }
