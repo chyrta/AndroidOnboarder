@@ -58,9 +58,10 @@ public class OnboarderFragment extends Fragment
 		args.putInt(ONBOARDER_PAGE_TITLE_COLOR, page.getTitleColor());
 		args.putInt(ONBOARDER_PAGE_DESCRIPTION_COLOR, page.getDescriptionColor());
 		args.putInt(ONBOARDER_PAGE_IMAGE_RES_ID, page.getImageResourceId());
-		args.putFloat(ONBOARDER_PAGE_TITLE_TEXT_SIZE, page.getTitleTextSize());
-		args.putFloat(ONBOARDER_PAGE_DESCRIPTION_TEXT_SIZE, page.getDescriptionTextSize());
-		args.putBoolean(ONBOARDER_PAGE_DESCRIPTION_CENTERED, page.isMultilineDescriptionCentered());
+		// TODO
+//		args.putFloat(ONBOARDER_PAGE_TITLE_TEXT_SIZE, page.getTitleTextSize());
+//		args.putFloat(ONBOARDER_PAGE_DESCRIPTION_TEXT_SIZE, page.getDescriptionTextSize());
+//		args.putBoolean(ONBOARDER_PAGE_DESCRIPTION_CENTERED, page.isMultilineDescriptionCentered());
 		OnboarderFragment fragment = new OnboarderFragment();
 		fragment.setArguments(args);
 		return fragment;

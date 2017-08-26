@@ -9,11 +9,14 @@ import java.util.List;
 
 public class OnboarderAdapter extends FragmentStatePagerAdapter {
 
-    List<OnboarderPage> pages = new ArrayList<OnboarderPage>();
+    List<OnboarderPage> pages = new ArrayList<>();
 
-    public OnboarderAdapter(List<OnboarderPage> pages, FragmentManager fm) {
+    public OnboarderAdapter(FragmentManager fm) {
         super(fm);
-        this.pages = pages;
+    }
+
+    public void addOnboarderPage(OnboarderPage onboarderPage) {
+        pages.add(onboarderPage);
     }
 
     @Override

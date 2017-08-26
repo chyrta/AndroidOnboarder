@@ -16,49 +16,6 @@ public class OnboarderPage {
     @ColorRes public int titleColor;
     @ColorRes public int descriptionColor;
     @ColorRes public int backgroundColor;
-    public float titleTextSize;
-    public float descriptionTextSize;
-    public boolean multilineDescriptionCentered;
-
-    public OnboarderPage(String title, String description) {
-        this.title = title;
-        this.description = description;
-        this.backgroundColor = R.color.black_transparent;
-    }
-
-    public OnboarderPage(String title, String description, int imageResourceId) {
-        this.title = title;
-        this.description = description;
-        this.imageResourceId = imageResourceId;
-        this.backgroundColor = R.color.black_transparent;
-    }
-
-    public OnboarderPage(String title, String description, Drawable imageResource) {
-        this.title = title;
-        this.description = description;
-        this.imageResource = imageResource;
-        this.backgroundColor = R.color.black_transparent;
-    }
-
-    public OnboarderPage(int title, int description) {
-        this.titleResourceId = title;
-        this.descriptionResourceId = description;
-        this.backgroundColor = R.color.black_transparent;
-    }
-
-    public OnboarderPage(int title, int description, int imageResourceId) {
-        this.titleResourceId = title;
-        this.descriptionResourceId = description;
-        this.imageResourceId = imageResourceId;
-        this.backgroundColor = R.color.black_transparent;
-    }
-
-    public OnboarderPage(int title, int description, Drawable imageResource) {
-        this.titleResourceId = title;
-        this.descriptionResourceId = description;
-        this.imageResource = imageResource;
-        this.backgroundColor = R.color.black_transparent;
-    }
 
     public String getTitle() {
         return title;
@@ -84,51 +41,71 @@ public class OnboarderPage {
         return descriptionColor;
     }
 
-    public void setTitleColor(int color) {
-        this.titleColor = color;
-    }
-
-    public void setDescriptionColor(int color) {
-        this.descriptionColor = color;
-    }
-
-    public void setImageResourceId(int imageResourceId) {
-        this.imageResourceId = imageResourceId;
-    }
-
     public int getImageResourceId() {
         return imageResourceId;
-    }
-
-    public void setBackgroundColor(int backgroundColor) {
-        this.backgroundColor = backgroundColor;
     }
 
     public int getBackgroundColor() {
         return backgroundColor;
     }
 
-    public float getTitleTextSize() {
-        return titleTextSize;
+    public static Creator newCreator() {
+        return new OnboarderPage().new Creator();
     }
 
-    public void setTitleTextSize(float titleTextSize) {
-        this.titleTextSize = titleTextSize;
+    public class Creator {
+
+        private Creator() {}
+
+        public Creator title(String title) {
+            OnboarderPage.this.title = title;
+            return this;
+        }
+
+        public Creator titleResourceId(@StringRes int titleResourceId) {
+            OnboarderPage.this.titleResourceId = titleResourceId;
+            return this;
+        }
+
+        public Creator description(String description) {
+            OnboarderPage.this.description = description;
+            return this;
+        }
+
+        public Creator descriptionResourceId(@StringRes int descriptionResourceId) {
+            OnboarderPage.this.descriptionResourceId = descriptionResourceId;
+            return this;
+        }
+
+        public Creator imageDrawable(Drawable imageDrawable) {
+            OnboarderPage.this.imageResource = imageDrawable;
+            return this;
+        }
+
+        public Creator imageResourceId(@DrawableRes int imageResourceId) {
+            OnboarderPage.this.imageResourceId = imageResourceId;
+            return this;
+        }
+
+        public Creator titleColor(@ColorRes int titleColor) {
+            OnboarderPage.this.titleColor = titleColor;
+            return this;
+        }
+
+        public Creator descriptionColor(@ColorRes int descriptionColor) {
+            OnboarderPage.this.descriptionColor = descriptionColor;
+            return this;
+        }
+
+        public Creator backgroundColor(@ColorRes int backgroundColor) {
+            OnboarderPage.this.backgroundColor = backgroundColor;
+            return this;
+        }
+
+        public OnboarderPage create() {
+            return OnboarderPage.this;
+        }
+
     }
 
-    public float getDescriptionTextSize() {
-        return descriptionTextSize;
-    }
-
-    public void setDescriptionTextSize(float descriptionTextSize) {
-        this.descriptionTextSize = descriptionTextSize;
-    }
-
-    public boolean isMultilineDescriptionCentered() {
-        return multilineDescriptionCentered;
-    }
-
-    public void setMultilineDescriptionCentered(boolean multilineDescriptionCentered) {
-        this.multilineDescriptionCentered = multilineDescriptionCentered;
-    }
 }

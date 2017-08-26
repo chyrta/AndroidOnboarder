@@ -13,16 +13,19 @@ ext {
     supportDeps = [
             appCompatV7: "com.android.support:appcompat-v7:$versions.supportLibraryVersion",
             design     : "com.android.support:design:$versions.supportLibraryVersion"
-
     ]
 
     injection = [
-            butterKnife        : "com.jakewharton:butterknife:$versions.butterKnifeVersion",
+            butterKnife: "com.jakewharton:butterknife:$versions.butterKnifeVersion",
+    ]
+
+    processors = [
             butterKnifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterKnifeVersion"
     ]
 
     kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre8:$versions.kotlinVersion"
     supportDepsLibraries = supportDeps.values()
     injectionLibraries = injection.values()
+    annotationProcessors = processors.values()
 
 }
