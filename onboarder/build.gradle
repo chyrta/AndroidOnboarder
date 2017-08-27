@@ -33,6 +33,7 @@ dependencies {
     implementation kotlin
     implementation supportDepsLibraries
     implementation injectionLibraries
+    implementation pageIndicator
     annotationProcessor annotationProcessors
 }
 

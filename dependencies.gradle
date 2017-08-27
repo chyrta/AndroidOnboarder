@@ -6,13 +6,17 @@ ext {
             androidCompileSdkVersion: 26,
             kotlinVersion           : "1.1.3-2",
             butterKnifeVersion      : "8.0.1",
-            supportLibraryVersion   : "26.0.1"
+            supportLibraryVersion   : "26.0.1",
+            constraintLayoutVersion : "1.0.2",
+            pageIndicatorViewVersion: "0.2.0",
+            ankoVersion             : "0.10.1"
     ]
 
     // Libraries
     supportDeps = [
-            appCompatV7: "com.android.support:appcompat-v7:$versions.supportLibraryVersion",
-            design     : "com.android.support:design:$versions.supportLibraryVersion"
+            appCompatV7     : "com.android.support:appcompat-v7:$versions.supportLibraryVersion",
+            design          : "com.android.support:design:$versions.supportLibraryVersion",
+            constraintLayout: "com.android.support.constraint:constraint-layout:$versions.constraintLayoutVersion"
     ]
 
     injection = [
@@ -24,6 +28,8 @@ ext {
     ]
 
     kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre8:$versions.kotlinVersion"
+    pageIndicator = "com.romandanylyk:pageindicatorview:$versions.pageIndicatorViewVersion"
+
     supportDepsLibraries = supportDeps.values()
     injectionLibraries = injection.values()
     annotationProcessors = processors.values()
