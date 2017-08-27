@@ -1,61 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_margin"
-    tools:background="#00AA00">
+    tools:background="#00AA00"
+    tools:context=".OnboarderActivity">
 
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/linlayText"
-        android:layout_alignParentTop="true"
-        android:layout_margin="@dimen/activity_margin"
-        tools:background="#FF0000">
-
-
-        <ImageView
-            android:id="@+id/iv_onboarder_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:adjustViewBounds="true"
-            android:contentDescription="@null"
-            android:scaleType="fitCenter"
-            tools:background="@drawable/die_for_music" />
-    </FrameLayout>
-
-    <LinearLayout
-        android:id="@+id/linlayText"
+    <ImageView
+        android:id="@+id/iv_onboarder_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="top|center_horizontal"
-        android:minHeight="@dimen/text_section_min_height"
-        android:orientation="vertical"
-        android:padding="@dimen/activity_margin"
-        tools:background="#660000FF">
+        android:layout_margin="@dimen/activity_margin"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@id/tv_onboarder_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_onboarder_title"
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            tools:text="Section Title" />
+    <TextView
+        android:id="@+id/tv_onboarder_title"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tv_onboarder_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Your lab, everywhere" />
 
-        <TextView
-            android:id="@+id/tv_onboarder_description"
-            style="@style/TextAppearance.AppCompat.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_between_title_and_description"
-            android:alpha="0.7"
-            android:gravity="center"
-            android:textColor="@color/white"
-            tools:text="A long description about my application." />
-    </LinearLayout>
-</RelativeLayout>
+    <TextView
+        android:id="@+id/tv_onboarder_description"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Find experiments happening nearby." />
+
+</android.support.constraint.ConstraintLayout>

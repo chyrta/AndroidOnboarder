@@ -14,27 +14,27 @@ public class IntroActivity extends OnboarderActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPage(OnboarderPage.newCreator()
+        addPage(OnboarderPage.Companion.newCreator()
                     .title("Planet Earth")
                     .description("Our lovely pale blue dot")
-                    .backgroundColor(R.color.black_transparent)
+                    .backgroundColor(R.color.onboarder_bg_1)
                     .imageResourceId(R.drawable.planet1)
                     .create());
-        addPage(OnboarderPage.newCreator()
+        addPage(OnboarderPage.Companion.newCreator()
                     .title("Venus")
                     .description("The love goddess")
-                    .backgroundColor(R.color.black_transparent)
+                    .backgroundColor(R.color.onboarder_bg_2)
                     .imageResourceId(R.drawable.planet2)
                     .create());
-        addPage(OnboarderPage.newCreator()
+        addPage(OnboarderPage.Companion.newCreator()
                     .title("Mars")
                     .description("Say hi to Curiosity")
-                    .backgroundColor(R.color.black_transparent)
+                    .backgroundColor(R.color.onboarder_bg_3)
                     .imageResourceId(R.drawable.planet3)
                     .create());
-        addGetStartedButton(GetStartedButton.newCreator()
+        addGetStartedButton(GetStartedButton.Companion.newCreator()
                     .text("Get started")
-                    .textColorResourceId(R.color.colorAccent)
+                    .textColor(android.R.color.black)
                     .create());
         startOnboarding();
 
