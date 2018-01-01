@@ -1,0 +1,36 @@
+ext {
+    versions = [
+            androidBuildToolsVersion: "26.0.1",
+            androidMinSdkVersion    : 15,
+            androidTargetSdkVersion : 26,
+            androidCompileSdkVersion: 26,
+            kotlinVersion           : "1.1.3-2",
+            butterKnifeVersion      : "8.0.1",
+            supportLibraryVersion   : "26.0.1",
+            constraintLayoutVersion : "1.0.2",
+            pageIndicatorViewVersion: "0.2.0",
+    ]
+
+    // Libraries
+    supportDeps = [
+            appCompatV7     : "com.android.support:appcompat-v7:$versions.supportLibraryVersion",
+            design          : "com.android.support:design:$versions.supportLibraryVersion",
+            constraintLayout: "com.android.support.constraint:constraint-layout:$versions.constraintLayoutVersion"
+    ]
+
+    injection = [
+            butterKnife: "com.jakewharton:butterknife:$versions.butterKnifeVersion",
+    ]
+
+    processors = [
+            butterKnifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterKnifeVersion"
+    ]
+
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre8:$versions.kotlinVersion"
+    pageIndicator = "com.romandanylyk:pageindicatorview:$versions.pageIndicatorViewVersion"
+
+    supportDepsLibraries = supportDeps.values()
+    injectionLibraries = injection.values()
+    annotationProcessors = processors.values()
+
+}

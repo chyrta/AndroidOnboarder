@@ -1,0 +1,21 @@
+ext.configuration = [
+        applicationId: "com.chyrta.boilerplate",
+        versionMajor: 1,
+        versionMinor: 0,
+        versionPatch: 0,
+        versionClassifier: "",
+        minimumSdk: 14,
+        compileSdk: 27,
+        targetSdk: 27,
+        buildTools: "27.0.3"
+]
+
+def configuration = ext.configuration;
+
+ext.buildVersionCode = {
+    return configuration.minimumSdk * 10000000 + configuration.versionMajor * 10000 + configuration.versionMinor * 100 + configuration.versionPatch
+}
+
+ext.buildVersionName = {
+    return configuration.versionMajor + "." + configuration.versionMinor + "." + configuration.versionPatch;
+}
