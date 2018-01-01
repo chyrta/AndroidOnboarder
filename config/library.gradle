@@ -1,12 +1,23 @@
 ext {
     versions = [
-            androidBuildToolsVersion: "26.0.1",
+            kotlin: "1.2.10",
+            butterKnife: "8.0.1",
+            supportLibrary: "26.0.1",
+            constraintLayout: "1.0.2",
+            pageIndicator: "0.2.0"
+    ]
+}
+
+
+ext {
+    versions = [
+            androidBuildToolsVersion: "27.0.3",
             androidMinSdkVersion    : 15,
-            androidTargetSdkVersion : 26,
-            androidCompileSdkVersion: 26,
-            kotlinVersion           : "1.1.3-2",
-            butterKnifeVersion      : "8.0.1",
-            supportLibraryVersion   : "26.0.1",
+            androidTargetSdkVersion : 27,
+            androidCompileSdkVersion: 27,
+            kotlinVersion           : "1.2.10",
+            butterKnifeVersion      : "8.8.1",
+            supportLibraryVersion   : "27.0.3",
             constraintLayoutVersion : "1.0.2",
             pageIndicatorViewVersion: "0.2.0",
     ]
