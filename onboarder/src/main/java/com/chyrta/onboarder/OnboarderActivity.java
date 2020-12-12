@@ -1,6 +1,7 @@
 package com.chyrta.onboarder;
 
 import android.animation.ArgbEvaluator;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -81,6 +82,10 @@ public abstract class OnboarderActivity extends AppCompatActivity implements Vie
     public void setDividerColor(@ColorInt int color) {
         if (!this.shouldDarkenButtonsLayout)
             this.divider.setBackgroundColor(color);
+    }
+
+    public void setFabColor(@ColorInt int color){
+        fab.setBackgroundTintList(ColorStateList.valueOf(color));
     }
 
     public void setDividerHeight(int heightInDp) {
